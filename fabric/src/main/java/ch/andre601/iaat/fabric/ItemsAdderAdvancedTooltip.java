@@ -26,8 +26,13 @@ public final class ItemsAdderAdvancedTooltip implements ModInitializer{
         String custom = TooltipUtil.getCustomId(stack);
         
         if(custom != null && type.isAdvanced()){
-            lines.removeIf(line -> line.getString().equals(BuiltInRegistries.ITEM.getKey(stack.getItem()).toString()));
-            lines.add(Component.literal(custom).withStyle(ChatFormatting.DARK_GRAY));
+            for(int i = 0; i < lines.size(); i++){
+                Component line = lines.get(i);
+                if(!line.getString().equals(BuiltInRegistries.ITEM.getKey(stack.getItem()).toString()))
+                    continue;
+                
+                lines.set(i, Component.literal(custom).withStyle(ChatFormatting.DARK_GRAY));
+            }
         }
     }
 }
