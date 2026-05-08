@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "iaat",
+	"version": "${version}",
+	"name": "ItemsAdderAdvancedTooltip",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://andre601.ch",
+		"sources": "https://github.com/Andre601/ItemsAdderAdvancedTooltip"
+	},
+	"license": "MIT",
+	"icon": "assets/iaat/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"ch.andre601.ItemsAdderAdvancedTooltip"
+		]
+	},
+	"mixins": [
+		"iaat.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
